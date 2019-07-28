@@ -1,0 +1,16 @@
+/bin/
+/.project
+/build/
+/.classpath
+/.settings
+/.gradle
+/node_modules/
+/dist/
+/npm-debug.log
+/.idea/
+.DS_Store
+*.zip
+base.vue
+baseService.js
+normal.vue
+package-lock.json

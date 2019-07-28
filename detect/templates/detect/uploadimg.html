@@ -1,0 +1,62 @@
+{% load static %}
+<link href="{% static "detect/style.css" %}" rel="stylesheet" type="text/css" />
+
+<body class="container">
+	<header>
+		<p>建议在 WIFI 环境下使用</p>
+		{% if output_str %}
+		<br><p>{{output_str}}</p>
+		{% endif %}
+	</header>
+	<div class="content">
+		<div class="imagebox">
+			<img src='{{ img.img.url }}' class="uploadimg" id="show"/>
+		</div>
+		<div id="model" class="modalDlg">
+			<p>服务器识别一张图像,最多可能需要 20~30 秒,请耐心等待.如果识别失败,可能是请求人数太多,换个时间再来吧！</p>
+			<!-- <button onclick="hideModel()">确定</button> -->
+		</div>
+	</div>
+	<footer>
+		<div class="box">
+			<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<input class="myFileUpload" onchange="enable(event)" type="file" name="img">
+			<button type="submit" class="byside" id="detect" disabled=true onclick="loading()">识 别</button>
+			</form>
+			<!-- <button class="byside" onclick="showModel()">关 于</button> -->
+		</div>
+	</footer>
+	<div id="mask" class="mask"></div>
+</body>
+<script>
+	function enable(event){
+		var detect = document.getElementById("detect");
+		detect.disabled = false;
+
+		var show = document.getElementById("show");
+		show.src = '';
+
+		var file = event.target.files[0];
+		show.src = URL.createObjectURL(file);
+
+	}
+	function loading(){
+		var model = document.getElementById("model");
+		var mask = document.getElementById("mask");
+		model.style.setProperty('display','flex');
+		mask.style.setProperty('display','flex');
+	}
+	function showModel(){
+		var model = document.getElementById("model");
+		var mask = document.getElementById("mask");
+		model.style.setProperty('display','flex');
+		mask.style.setProperty('display','flex');
+	}
+	function hideModel(){
+		var model = document.getElementById("model");
+		var mask = document.getElementById("mask");
+		model.style.setProperty('display','none');
+		mask.style.setProperty('display','none');
+	}
+</script>

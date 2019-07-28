@@ -1,0 +1,8 @@
+{% for img in imgs %}
+{% ifequal img.title img.title %}
+<p>{{img.title}}</p>
+<p>{{img.author}}</p>
+<p>{{img.pub_date}}</p>
+<img src='{{ img.img.url }}' />
+{% endifequal %}
+{% endfor %}
