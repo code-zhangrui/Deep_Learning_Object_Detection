@@ -7,7 +7,6 @@ from PIL import Image, ImageDraw
 from keras import backend as K
 from keras.models import load_model
 from keras.layers import Input
-from keras.utils import multi_gpu_model
 from detect.yolo_model import compose_net
 from detect.yolo_param import generate_parameters
 
