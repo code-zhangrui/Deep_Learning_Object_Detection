@@ -24,7 +24,7 @@ h5py==2.8.0rc1
 
 ## 本地部署
 
-- 下载预训练权重文件 yolo.h5，放进 ，放进 data/detect/model_data/ 目录下
+- 下载预训练权重文件 yolo.h5，放进 data/detect/model_data/ 目录下
 - https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo.h5
 
 - python manage.py makemigrations
