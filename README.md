@@ -24,7 +24,8 @@ h5py==2.8.0rc1
 
 ## 本地部署
 
-- 从网上下载预训练权重文件 yolo.h5
+- 下载预训练权重文件 yolo.h5
+- https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo.h5
 
 - python manage.py makemigrations
 
