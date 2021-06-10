@@ -1,4 +1,4 @@
-Django==2.0.6 
+Django==2.2.24 
 gunicorn==19.8.1 
 Keras==2.1.5 
 Pillow==5.0.0 
